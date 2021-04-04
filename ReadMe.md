@@ -1,11 +1,17 @@
-# sgfutil
+# sgfutil <!-- omit in TOC -->
 
 sgfutil 是一个处理 SGF (Smart Go Format) 围棋棋谱文件的 Python 工具。
 
-1. [sgfutil](#sgfutil)
-   1. [安装与依赖](#安装与依赖)
-   2. [用法](#用法)
-   3. [许可证](#许可证)
+<div align="center">
+    <img src="docs/img/logo.svg" width=70%>
+</div>
+
+*该 Logo 由本人使用 TikZ 绘制。*
+
+目录：
+1. [安装与依赖](#安装与依赖)
+2. [用法](#用法)
+3. [许可证](#许可证)
 
 ## 安装与依赖
 
