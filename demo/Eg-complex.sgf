@@ -1,0 +1,9 @@
+(;CA[utf-8]AB[rd][sd][oa][ob][oc][od][pd]AW[pa][pb][pc][qc][rc][sc]C[板六(紧气) - [黑先杀白\]
+---
+
+非常基础的一道死活题。]
+AP[MultiGo:4.4.4]SZ[19]AB[qd]MULTIGOGM[0]
+
+(;B[rb]C[黑棋靠，正解。]N[正解];W[ra];B[sb]LB[qb:A]C[白A位不入气，已净死。])
+(;B[ra]C[二一路似乎也是急所，但在此场合是错着。];W[rb];B[qa]
+;W[sa]C[净杀变劫杀，黑失败。]))

@@ -1,0 +1,4 @@
+(;CA[utf-8]AP[MultiGo:4.4.4]SZ[19]C[Multiple branch test]MULTIGOGM[0]
+;B[pd];W[nc]
+(;B[qf]C[Branch A.];W[pb];B[qc];W[kc])
+(;B[pf]C[Branch B.];W[pb];B[qc];W[kc]))
