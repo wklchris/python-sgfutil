@@ -83,5 +83,5 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 #     2.4.1-r1 > 2.4.1 > 2.4.1pre1
 
 
-release_new = "0.2.0-r4"
+release_new = "0.1.1"
 main(release_new, ignore_tag_conflict=True, repo='testpypi')

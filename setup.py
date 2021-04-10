@@ -14,7 +14,7 @@ _long_description = capture_sgfutil_readme(mdstr)
 # Main
 setup(
     name = "sgfutil",
-    version = '0.2.0-r4',
+    version = '0.1.1',
     packages = ['sgfutil'],
     include_package_data = True,
     install_requires = ["ply"],
