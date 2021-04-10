@@ -42,15 +42,23 @@ class SgfParser(object):
             p[0] = (*p[1], p[2])
     
     def p_property(self, p):
-        '''property : PROP val
+        '''property : MOVE val
+                    | SETUP val
+                    | NODEANNO val
+                    | MOVEANNO val
+                    | MARKUP val
+                    | ROOT val
+                    | GAMEINFO val
+                    | TIMING val
+                    | PROP val
                     | property val'''
-        if p.slice[1].type == 'PROP':
-            p[0] = (p[1], p[2])
+        if p.slice[1].type in 'MOVE SETUP NODEANNO MOVEANNO MARKUP ROOT GAMEINFO TIMING PROP':
+            p[0] = (p[1], p[2], p.slice[1].type)
         # Append new val p[2] to the existing val list.
         elif isinstance(p[1][1], list):
-            p[0] = (p[1][0], [*p[1][1], p[2]])
+            p[0] = (p[1][0], [*p[1][1], p[2]], p[1][2])
         else:
-            p[0] = (p[1][0], [p[1][1], p[2]])
+            p[0] = (p[1][0], [p[1][1], p[2]], p[1][2])
     
     def p_val(self, p):
         '''val : LBRACKET INT RBRACKET
@@ -80,14 +88,10 @@ class SgfParser(object):
                 s += str(node) + '\n'
         return s
     
-    def sgf_parse(self, inputstr):
+    def sgf_parse(self, inputstr, debug=False):
         self.parser = yacc.yacc(module=self)
         if inputstr.endswith('.sgf'):
             with open(inputstr, 'r', encoding='utf-8') as f:
-                self.parsed_sgf = self.parser.parse(f.read())
+                self.parsed_sgf = self.parser.parse(f.read(), debug=debug)
         else:
-            self.parsed_sgf = self.parser.parse(inputstr)
-
-    def test(self, data, debug=False):
-        self.parser.parse(data, debug=debug)
-        self.__repr__()
+            self.parsed_sgf = self.parser.parse(inputstr, debug=debug)

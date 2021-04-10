@@ -6,8 +6,11 @@ class SgfLexer(object):
         "SEMICOLON",
         "LPAREN", 'RPAREN',
         'LBRACKET', 'RBRACKET',
-        # PROP types
-        "PROP",
+        # PROP types: https://www.red-bean.com/sgf/properties.html
+        "MOVE", "SETUP",
+        "NODEANNO", "MOVEANNO",
+        "MARKUP", "ROOT", "GAMEINFO",
+        "TIMING", "PROP",
         # Value types
         "INT", "REAL",
         "POINT",
@@ -19,7 +22,15 @@ class SgfLexer(object):
     t_RPAREN    = r'\)'
     t_LBRACKET  = r'\['
     t_RBRACKET  = r'\]'
-    t_PROP      = r'[A-Z]{1,10}'
+    t_MOVE      = r'(B|KO|MN|W)(?=\[)'
+    t_SETUP     = r'(AB|AE|AW|PL)(?=\[)'
+    t_NODEANNO  = r'(C|DM|GB|GW|HO|N|UC|V)(?=\[)'
+    t_MOVEANNO  = r'(BM|DO|IT|TE)(?=\[)'
+    t_MARKUP    = r'(AR|CR|DD|LB|LN|MA|SL|SQ|TR)(?=\[)'
+    t_ROOT      = r'(AP|CA|FF|GM|ST|SZ)(?=\[)'
+    t_GAMEINFO  = r'(AN|BR|BT|CP|DT|EV|GN|GC|ON|OT|PB|PC|PW|RE|RO|RU|SO|TM|US|WR|WT)(?=\[)'
+    t_TIMING    = r'(BL|OB|OW|WL)(?=\[)'
+    t_PROP      = r'[A-Z]{1,10}(?=\[)'  # Misc
 
     def t_INT(self, t):
         r'[\+\-]?[0-9]+'
