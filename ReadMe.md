@@ -1,36 +1,44 @@
 # sgfutil <!-- omit in TOC -->
 
-sgfutil 是一个处理 SGF (Smart Game Format) 棋谱文件的 Python 工具。支持 SGF FF4.0 语法。
+\>\> Languages: [中文](./docs/Readme-cn.md)
 
-<div align="center">
-    <img src="docs/img/logo.svg" width=70%>
-</div>
+sgfutil is a Python library (see [Github repo](https://github.com/wklchris/python-sgfutil)) for utilizing SGF (Smart Game Format) files. It supports SGF FF4.0 syntax.
 
-*该 Logo 由本人使用 TikZ 绘制。*
+<img src="./docs/img/logo.svg" alt="sgfutil logo" width="70%" style="display: block; margin-left: auto; mergin-right: auto">
 
-如果您希望了解关于 SGF 格式的更多信息（比如其文法），可以前往 [SGF 官方页面](https://www.red-bean.com/sgf/sgf4.html#ebnf-def)。
+*Logo drawn by myself using TikZ*
 
-目录：
-1. [安装与依赖](#安装与依赖)
-2. [用法](#用法)
-3. [开发计划](#开发计划)
-4. [许可证](#许可证)
+If you are willing to know more about the SGF format, please visit the [SGF official site](https://www.red-bean.com/sgf/sgf4.html).
 
-## 安装与依赖
+Table of Contents：
+1. [Installation & Dependency](#installation--dependency)
+2. [Usage](#usage)
+3. [Future Plan](#future-plan)
+4. [License](#license)
 
-依赖项：
+## Installation & Dependency
+
+Installation:
+
+```python
+python -m pip install sgfutil 
+```
+
+Dependency：
 
 - Python >= 3.6
-- ply 库：已不在 pip 更新，如需最新的版本可前往其官方 Github 仓库 [dabeza/ply](https://github.com/dabeaz/ply)。不过一个稳定的、但稍旧的 ply 版本仍然可以从 pip 直接安装：
+- `ply` library：This library is no longer maintained on pip. Users can visit its official Github repo [dabeza/ply](https://github.com/dabeaz/ply) for the latest version.
+  
+  However, a stable yet a little older version (3.11) of ply is still accessible through pip installation:
   
   `python -m pip install ply`
 
 
-## 用法
+## Usage
 
-下面是一个示例。
+Here is an example.
 
-可以向 `sgf_parse()` 函数传入 sgf 文件路径：
+You can pass an SGF filepath to the `sgf_parse()` function：
 ```python
 >>> from sgfutil import SgfParser
 >>> parser = SgfParser()
@@ -41,7 +49,7 @@ sgfutil 是一个处理 SGF (Smart Game Format) 棋谱文件的 Python 工具。
 (('CA', 'utf-8'), ('AB', ['rd', 'sd', 'oa', 'ob', 'oc', 'od', 'pd']), ('AW', ['pa', 'pb', 'pc', 'qc', 'rc', 'sc']))
 ```
 
-也可以直接传入 sgf 字符串：
+Or you can simply input an SGF string：
 ```python
 >>> parser.sgf_parse('(;CA[utf-8]SZ[19];B[ab](;W[cd]C[Good move])(;W[ef];B[gh]))')
 >>> print(parser)
@@ -58,14 +66,14 @@ sgfutil 是一个处理 SGF (Smart Game Format) 棋谱文件的 Python 工具。
 (('B', 'gh'),)
 ```
 
-## 开发计划
+## Future Plan
 
-- [ ] 将 Parser 过程改写为 Tree 与 Node 类。
-- [ ] 对输入的 SGF 进行语法检查。
-- [ ] 编辑 SGF 节点。
-- [ ] 可视化。
+- [ ] Rewrite parsed data as Tree & Node class.
+- [ ] Syntax check for the input SGF string.
+- [ ] SGF nodes editing.
+- [ ] Visualization.
 
 
-## 许可证
+## License
 
 [MIT](LICENSE)

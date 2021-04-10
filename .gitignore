@@ -1,5 +1,10 @@
 __pycache__
 parsetab.py
 
+# Setuptools build
+build/
+dist/
+*.egg-info/
+
 demo.py
 *.pdf

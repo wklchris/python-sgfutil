@@ -1,0 +1,5 @@
+include LICENSE ReadMe.md
+include docs/img/logo.svg
+include docs/ReadMe*
+recursive-include sgfutil *.*
+recursive-include demo *.*
