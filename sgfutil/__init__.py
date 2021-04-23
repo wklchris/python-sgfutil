@@ -1,2 +1,3 @@
 from .lexer import SgfLexer
-from .parser import SgfParser
+from .parser import SgfParserNative, SgfParser
+from .tree import GameProp, GameNode
