@@ -1,10 +1,10 @@
 __pycache__
 parsetab.py
+.vscode
 
 # Setuptools build
 build/
 dist/
 *.egg-info/
 
-demo.py
 *.pdf
