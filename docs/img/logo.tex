@@ -1,4 +1,7 @@
-\documentclass[tikz,convert={outfile={test.svg}}]{standalone}
+% Compile:
+%   pdflatex -synctex=1 --shell-escape -interaction=nonstopmode -file-line-error %DOC%
+%   pdf2svg %DOCFILE%.pdf %DOCFILE%.svg
+\documentclass[tikz]{standalone}
 \usetikzlibrary{calc,intersections}
 
 \begin{document}

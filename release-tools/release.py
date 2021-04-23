@@ -79,9 +79,9 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 # For the version naming, refer to setuptools' documentation:
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#specifying-your-project-s-version
 #
-# Simrofy version format:
+# sgfutil version format:
 #     2.4.1-r1 > 2.4.1 > 2.4.1pre1
 
-
+# Make sure [ALL ReadMe files are updated] before release.
 release_new = "0.1.1"
 main(release_new, ignore_tag_conflict=True, repo='testpypi')
